@@ -1,1 +1,1 @@
-INSERT INTO foods (name) VALUES ('Baguette');
+INSERT INTO foods (name, price) VALUES ('Baguette', 225);

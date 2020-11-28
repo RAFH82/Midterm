@@ -1,4 +1,6 @@
 CREATE TABLE foods (
   id SERIAL PRIMARY KEY NOT NULL,
-  name VARCHAR (255) NOT NULL
+  name VARCHAR (255) NOT NULL,
+  price INTEGER NOT NULL,
+  food_pic_url VARCHAR(255)
 );
