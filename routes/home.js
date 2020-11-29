@@ -3,11 +3,17 @@ const router  = express.Router();
 
 module.exports = (db) => {
   router.get("/", (req, res) => {
-    res.render("home");
-    db.query(`SELECT * FROM users;`)
+    // res.render("home");
+    console.log("Im inside the home render");
+   db.query(`SELECT * FROM users;`)
       .then(data => {
-        const users = data.rows;
-        res.json({ users });
+        const users = data.rows[0].name;
+        // res.json({ users });
+        const templateVars = {
+          username : users
+        };
+        res.render('home', templateVars);
+
       })
       .catch(err => {
         res
