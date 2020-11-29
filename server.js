@@ -48,17 +48,13 @@ const checkoutRoutes = require("./routes/checkout");
 app.use("/api/users", usersRoutes(db));
 app.use("/api/widgets", widgetsRoutes(db));
 app.use("/home", homeRoutes(db));
-app.use("/menu", menuRoutes);
+app.use("/menu", menuRoutes(db));
 app.use("/orders", orderRoutes);
 app.use("/checkout", checkoutRoutes);
 // Note: mount other resources here, using the same pattern above
 
 
 // Home page
-app.get("/login/:id", (req, res) => {
-  req.session.user_id = req.params.id;
-  res.render("home");
-});
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
