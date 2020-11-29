@@ -47,7 +47,7 @@ const checkoutRoutes = require("./routes/checkout");
 // Note: Feel free to replace the example routes below with your own
 app.use("/api/users", usersRoutes(db));
 app.use("/api/widgets", widgetsRoutes(db));
-app.use("/home", homeRoutes);
+app.use("/home", homeRoutes(db));
 app.use("/menu", menuRoutes);
 app.use("/orders", orderRoutes);
 app.use("/checkout", checkoutRoutes);
