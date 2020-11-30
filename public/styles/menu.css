@@ -1,0 +1,35 @@
+.foodBox {
+  margin: 20px 0;
+  width: 100%;
+  max-width: 800px;
+  height: 300px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  align-content: stretch;
+  transition: box-shadow .3s;
+}
+.foodBox-img {
+  width: 70%;
+  overflow: hidden;
+}
+.foodBox-img img{
+  min-width: 100%;
+  height: 100%;
+  padding: 10px;
+}
+.foodBox-description {
+  width: 70%;
+  position: relative;
+  left:20%;
+  margin:10px;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.foodBox:hover {
+  box-shadow: 0 0 11px rgba(33,33,33,.2);
+}
