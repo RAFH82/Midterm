@@ -24,6 +24,8 @@
     "pg-native": "^3.0.0"
   },
   "devDependencies": {
+    "nexmo": "^2.9.1",
+    "ngrok": "^3.3.0",
     "nodemon": "^1.19.1"
   }
 }
