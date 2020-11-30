@@ -1,8 +1,10 @@
 const express = require('express');
 const router  = express.Router();
 
+module.exports = () => {
 router.get("/", (req, res) => {
-  res.render("orders")
+  res.render("orders");
 })
 
-module.exports = router;
+return router;
+}
