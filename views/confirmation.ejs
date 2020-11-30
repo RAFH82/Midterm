@@ -18,14 +18,12 @@
     <nav>
       <%- include('partials/_header') %>
     </nav>
-    <header>
-    </header>
-    <section>
-      <div class="home-pic">
-        <h1 class="headline">BENVENUTO E MANGIA!</h1>
-      </div>
-    </section>
     <h1>FOOD APP</h1>
-    <h3>ORDER CONFIRMED</h3>
+    <h3>ORDER CONFIRMED & SENT</h3>
+    <div>Order details</div>
+    <div>Order # <%= order_id %></div>
+    <div>For <%= name %></div>
+    <div>Submitted at <%= time %></div>
+    <a href="/sms/smsReceive">Click here for restaurant response</a>
   </body>
 </html>
