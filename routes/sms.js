@@ -19,8 +19,12 @@ router.get("/", (req, res) => {
 });
 
 router.get("/smsReceive", (req, res) => {
-  res.render("smsReceive", templateVars);
-})
+  if (!templateVars) {
+    res.render("orderNotReady")
+  } else {
+    res.render("smsReceive", templateVars);
+  }
+});
 
 router.post("/smsReceive", (req, res) => {
   const params = Object.assign(req.query, req.body)
