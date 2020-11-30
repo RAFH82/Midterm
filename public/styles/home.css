@@ -1,0 +1,54 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+section {
+  display: flex;
+  height: 80vh;
+  justify-content: center;
+  align-items: center;
+}
+.home-pic {
+  height: 100%;
+  width: 100%;
+}
+
+.home-pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.headline {
+  position: absolute;
+  top: 70%;
+  left: 10%;
+  font-size: 40px;
+  color: white;
+  transform: translate(-20%, -100%);
+  z-index: 1;
+}
+/* Create Order button */
+#order-butt {
+  position:absolute;
+  top: 70%;
+  left: 10%;
+  transform: translate(-30%);
+  border-radius: 2px;
+  padding: 12px 28px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 2px solid lightslategray;
+  text-decoration: none;
+  transition: all 0.2s ease-out
+}
+#order-butt:hover {
+  color: lightsteelblue;
+  background-color: rgba(255, 255, 255, 0.15)
+}
+#order-butt:active {
+  background-color: rgba(255, 255, 255, 0.05)
+}
+
+body { padding-top: 50px; }
