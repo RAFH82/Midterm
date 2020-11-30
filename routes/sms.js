@@ -1,6 +1,7 @@
 const express = require('express');
 const router  = express.Router();
 const Nexmo = require('nexmo');
+
 const nexmo = new Nexmo({
   apiKey: '70383c0f',
   apiSecret: 'UiM45z2qA0PYRemk',
@@ -26,7 +27,7 @@ router.post("/smsReceive", (req, res) => {
   const text = params.text;
   templateVars = { text };
   console.log(templateVars);
-  res.redirect("smsReceive", templateVars);
+  res.render("smsReceive", templateVars);
   res.status(200).send()
 });
 

@@ -43,6 +43,7 @@ const homeRoutes = require("./routes/home")
 const menuRoutes = require("./routes/menu")
 const orderRoutes = require("./routes/orders");
 const checkoutRoutes = require("./routes/checkout");
+const smsRoutes = require("./routes/sms");
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 app.use("/api/users", usersRoutes(db));
@@ -51,6 +52,7 @@ app.use("/home", homeRoutes(db));
 app.use("/menu", menuRoutes(db));
 app.use("/orders", orderRoutes);
 app.use("/checkout", checkoutRoutes);
+app.use("/sms", smsRoutes);
 // Note: mount other resources here, using the same pattern above
 
 
