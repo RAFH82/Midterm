@@ -50,7 +50,7 @@ app.use("/api/users", usersRoutes(db));
 app.use("/api/widgets", widgetsRoutes(db));
 app.use("/home", homeRoutes(db));
 app.use("/menu", menuRoutes(db));
-app.use("/orders", orderRoutes);
+app.use("/orders", orderRoutes(db));
 app.use("/checkout", checkoutRoutes(db));
 app.use("/sms", smsRoutes);
 // Note: mount other resources here, using the same pattern above
