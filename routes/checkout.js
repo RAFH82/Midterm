@@ -1,19 +1,20 @@
+require('dotenv').config();
 const express = require('express');
 const router  = express.Router();
 const Nexmo = require('nexmo');
 
 const nexmo = new Nexmo({
-  apiKey: '70383c0f',
-  apiSecret: 'UiM45z2qA0PYRemk',
+  apiKey: process.env.VONAGE_API_KEY,
+  apiSecret: process.env.VONAGE_API_SECRET,
 });
 
 module.exports = (db) => {
 
   router.get("/submit", (req, res) => {
     db.query(`
-    SELECT * FROM food_orders
+    SELECT * FROM order_items
     JOIN orders ON orders.id = order_id
-    JOIN foods ON foods.id = food_id
+    JOIN items ON items.id = item_id
     JOIN users ON users.id = user_id
     WHERE users.id = 1
     ;`)
