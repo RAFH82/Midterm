@@ -11,9 +11,9 @@ module.exports = (db) => {
 
   router.get("/submit", (req, res) => {
     db.query(`
-    SELECT * FROM food_orders
+    SELECT * FROM order_items
     JOIN orders ON orders.id = order_id
-    JOIN foods ON foods.id = food_id
+    JOIN items ON items.id = item_id
     JOIN users ON users.id = user_id
     WHERE users.id = 1
     ;`)
