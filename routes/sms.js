@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const router  = express.Router();
 const { utcTimeChange } = require('../public/scripts/helpers');
@@ -5,8 +6,8 @@ const { utcTimeChange } = require('../public/scripts/helpers');
 // For SMS API
 const Nexmo = require('nexmo');
 const nexmo = new Nexmo({
-  apiKey: '70383c0f',
-  apiSecret: 'UiM45z2qA0PYRemk',
+  apiKey: process.env.VONAGE_API_KEY,
+  apiSecret: process.env.VONAGE_API_SECRET,
 });
 
 let templateVars;
