@@ -9,13 +9,50 @@ router.post("/",(req, res) => {
   const quantity = req.body.quantity;
   const id = req.body.itemID;
   const total = price * quantity;
-  console.log(req.body)
-  db.query(`INSERT INTO order_items (order_id,item_id, quantity,order_items_total) VALUES (1,${id},${quantity},${total});`)
+  // console.log(req.body)
+  db.query(`SELECT item_id FROM order_items WHERE order_id = 1 and item_id = ${id};`)
+  .then(data => {
+
+    let b = [];
+    for (let item of data.rows) {
+      b.push({...item});
+    }
+    console.log("menu", b);
+    if(b.length === 0) {
+    db.query(`INSERT INTO order_items (order_id,item_id, quantity,order_items_total) VALUES (1,${id},${quantity},${total});`)
+    .then(data => {
+      res.status(200);
+    })
+    .catch(err => {
+      res
+        .status(500)
+        .json({ error: err.message });
+    });
+
+}
+
+else {
+  console.log("executed---");
+  db.query(`UPDATE order_items SET quantity =${quantity},order_items_total=${total} WHERE item_id=${id} and order_id = 1;`)
+  .then(data=>{
+    res.status(200);
+  })
+  .catch(err => {
+    res
+      .status(500)
+     .json({ error: err.message });
+
+  });
+}
+
+  })
   .catch(err => {
     res
       .status(500)
       .json({ error: err.message });
   });
+
+
 });
 router.get("/", (req, res) => {
    db.query('SELECT * FROM items ORDER BY id;')
@@ -46,5 +83,6 @@ router.get("/", (req, res) => {
 
 
 return router;
+
 
 };

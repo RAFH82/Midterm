@@ -12,6 +12,7 @@ router.get("/", (req, res) => {
   .then(data => {
     let b = [];
     const items = data.rows;
+
     for (let item of items) {
       b.push({name: item.name,
               quantity: item.quantity,
@@ -19,11 +20,12 @@ router.get("/", (req, res) => {
               orderItemTotal: item.order_items_total});
 
     }
+    console.log('b',b);
     const templateVars = {
           summary : b,
           total : b[0].orderTotal
     }
-   console.log(items);
+
    res.render("orders", templateVars);
   })
   .catch(err => {
