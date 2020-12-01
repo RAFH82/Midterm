@@ -1,10 +1,11 @@
+require('dotenv').config();
 const express = require('express');
 const router  = express.Router();
 const Nexmo = require('nexmo');
 
 const nexmo = new Nexmo({
-  apiKey: '70383c0f',
-  apiSecret: 'UiM45z2qA0PYRemk',
+  apiKey: process.env.VONAGE_API_KEY,
+  apiSecret: process.env.VONAGE_API_SECRET,
 });
 
 module.exports = (db) => {
