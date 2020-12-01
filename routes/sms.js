@@ -1,6 +1,6 @@
 const express = require('express');
 const router  = express.Router();
-const moment = require('moment-timezone');
+const { utcTimeChange } = require('../public/scripts/helpers');
 
 // For SMS API
 const Nexmo = require('nexmo');
@@ -29,8 +29,8 @@ router.post("/smsReceive", (req, res) => {
   const params = Object.assign(req.body)
   const text = params.text;
   const UTCDateTime = params['message-timestamp'];
-  const timeStamp = (moment.tz(UTCDateTime, "Europe/London")).tz("America/Vancouver").format('YYYY-MM-DD LT');
-  console.log(timeStamp);
+  // Convert to local time
+  const timeStamp = utcTimeChange(UTCDateTime, "Europe/London", "America/Vancouver");
   templateVars = { text, timeStamp };
   res.render("smsReceive", templateVars);
   res.status(200).send()
