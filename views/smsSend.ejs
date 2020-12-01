@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Confirmation</title>
+    <title>SMS sent</title>
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
     <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
@@ -18,12 +18,15 @@
     <nav>
       <%- include('partials/_header') %>
     </nav>
+    <section>
+      <div class="home-pic">
+        <h1 class="headline">BENVENUTO E MANGIA!</h1>
+      </div>
+    </section>
     <h1>FOOD APP</h1>
-    <h3>ORDER CONFIRMED & SENT</h3>
-    <div>Order details</div>
-    <div>Order # <%= order_id %></div>
-    <div>For <%= name %></div>
-    <div>Submitted at <%= time %></div>
-    <a href="/sms/smsReceive">Click here for restaurant response</a>
+    <h3>SMS sent</h3>
+
+    <a href ="/home">Back to home</a>
+
   </body>
 </html>
