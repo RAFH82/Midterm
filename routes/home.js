@@ -47,6 +47,16 @@ module.exports = (db) => {
   router.get("/register", (req, res) => {
     res.render("register");
   });
+   router.post("/",(req, res) => {
+    db.query('INSERT INTO orders (user_id) VALUES (1);')
+    .then(data => {
+      res.redirect('/menu');
+    });
+
+
+
+  });
   return router;
+
 };
 
