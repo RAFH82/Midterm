@@ -1,11 +1,31 @@
+body {
+  display:flex;
+  justify-content: center;
+}
+
 section.orderSummary {
   text-align: center;
-  width:300px;
+  width: 500px;
   display: inline-block;
-  margin-top: 100px;
-  margin-left: 690px;
   font-family: 'Oxygen', serif;
+  font-weight: 400;
+  font-size: 24px;
+  color: #284B59;
 }
+
+.response-container {
+  padding: 10px 20px;
+  width: auto;
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 10px;
+  box-shadow: 5px 5px 15px 5px #8a8a8a;
+  word-wrap: normal;
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+}
+
 ul.orderedList {
   list-style-type: none;
   text-align: left;
@@ -25,4 +45,18 @@ span.price{
 }
 header.section-heading{
   margin-bottom: 30px;
+}
+
+#status-button {
+  background-color: #284b59;
+  margin: 10px;
+}
+
+#status-button:hover {
+  background-color: #3a6e83;
+}
+
+.order-text {
+  font-size: 30px;
+  font-weight: 700;
 }

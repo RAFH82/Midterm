@@ -12,37 +12,39 @@
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
     <script type="text/javascript" src="/scripts/orderPage.js"></script>
     <script type="text/javascript" src="/scripts/app.js"></script>
-  <body>
+  <body style="margin-top: 130px; background-color: #f5f5f5; background-image: url('https://www.transparenttextures.com/patterns/xv.png');">
     <nav>
       <%- include('partials/_header') %>
     </nav>
-    <section class="orderSummary">
-      <header class='section-heading'>
-      <div class="home-pic">
-      <h1 class="headline">FOOD APP!</h1>
-      <h1>YOUR ORDER</h1>
-      </div>
-      </header>
+    <div class="response-container">
+      <section class="orderSummary">
+        <header class='section-heading'>
+        <div class="home-pic">
+        <p class="order-text">Your Order</p>
+        </div>
+        </header>
 
-      <% for (let item of summary) { %>
-      <article class=list-article>
+        <% for (let item of summary) { %>
+        <article class=list-article>
 
 
-            <p><span class="quantity"><input type="number" class="qty" min="0" max="10" value="<%=item.quantity%>"></span>
-            <span class="fixed-quantity"><%=item.quantity%></span>  <%=item.name%>
-             <span class="price"> <%=item.orderItemTotal%></span>
-             <span class = "fixedPrice"><%=item.orderItemTotal%></span>
-            </p>
+              <p><span class="quantity"><input type="number" class="qty" min="0" max="10" value="<%=item.quantity%>"></span>
+              <span class="fixed-quantity"><%=item.quantity%></span>  <%=item.name%>
+              <span class="price"> <%=item.orderItemTotal%></span>
+              <span class = "fixedPrice"><%=item.orderItemTotal%></span>
+              </p>
 
-      </article>
+        </article>
 
-      <% } %>
-      <footer>
-        YOUR TOTAL:<h2> <%= total %></h2>
+        <% } %>
+        <footer>
+          <p class="order-text">Order total:</p>
+          <h2> <%= total %></h2>
 
-    <a href ="/home">Back to home</a>
-    <a href ="/checkout">Checkout</a>
-      </footer>
-  </section>
+          <a href ="/menu"><button class="btn btn-dark" id="status-button">Back to Menu</button></a>
+          <a href ="/checkout"><button class="btn btn-dark" id="status-button">Checkout</button></a>
+        </footer>
+      </section>
+    </div>
   </body>
 </html>

@@ -20,10 +20,10 @@
   background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
 }
 
-#home-button {
+#stats-button {
   background-color: #284b59;
 }
 
-#home-button:hover {
+#status-button:hover {
   background-color: #3a6e83;
 }
