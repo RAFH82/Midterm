@@ -10,13 +10,23 @@ router.post("/",(req, res) => {
   const id = req.body.itemID;
   const total = price * quantity;
   // console.log(req.body)
+<<<<<<< HEAD
   db.query(`SELECT item_id FROM order_items WHERE order_id = 1`)
   .then(data => {
+=======
+  db.query(`SELECT item_id FROM order_items WHERE order_id = 1 and item_id = ${id};`)
+  .then(data => {
+
+>>>>>>> 29e95baadd1910eca0a460543ce6458098f6764a
     let b = [];
     for (let item of data.rows) {
       b.push({...item});
     }
+<<<<<<< HEAD
     console.log("menu", b); //menu [ { item_id: 1 } ]
+=======
+    console.log("menu", b);
+>>>>>>> 29e95baadd1910eca0a460543ce6458098f6764a
     if(b.length === 0) {
     db.query(`INSERT INTO order_items (order_id,item_id, quantity,order_items_total) VALUES (1,${id},${quantity},${total});`)
     .then(data => {
@@ -27,6 +37,7 @@ router.post("/",(req, res) => {
         .status(500)
         .json({ error: err.message });
     });
+<<<<<<< HEAD
   }
   else if (b.length !== 0){
   for (const c of b) {
@@ -44,6 +55,12 @@ router.post("/",(req, res) => {
     }
   }
   }else {
+=======
+
+}
+
+else {
+>>>>>>> 29e95baadd1910eca0a460543ce6458098f6764a
   console.log("executed---");
   db.query(`UPDATE order_items SET quantity =${quantity},order_items_total=${total} WHERE item_id=${id} and order_id = 1;`)
   .then(data=>{
@@ -57,7 +74,10 @@ router.post("/",(req, res) => {
   });
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 29e95baadd1910eca0a460543ce6458098f6764a
   })
   .catch(err => {
     res
@@ -96,5 +116,6 @@ router.get("/", (req, res) => {
 
 
 return router;
+
 
 };
