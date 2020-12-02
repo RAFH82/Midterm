@@ -1,6 +1,19 @@
 html {
   scroll-behavior: smooth;
 }
+#menu {
+  margin: 10px;
+}
+.vines {
+  max-width: 10%;
+}
+#right-vine {
+  transform: scaleX(-1);
+}
+.menu-vines {
+  display: flex;
+  justify-content: center;
+}
 
 .all-content {
   height: 100vh;
@@ -11,7 +24,10 @@ html {
 }
 
 .intro-text {
+  display: flex;
   margin: 20px;
+  flex-direction: column;
+  align-items: center;
 }
 
 .menu-items {
