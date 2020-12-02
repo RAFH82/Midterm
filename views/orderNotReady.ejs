@@ -1,35 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Order not yet ready</title>
-    <meta http-equiv="refresh" content="5" >
+    <title>Order status</title>
+    <meta http-equiv="refresh" content="5">
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
     <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/home.css" types="text/css">
     <link rel="stylesheet" href="/styles/nav.css" types="text/css">
+    <link rel="stylesheet" href="/styles/smsReceive.css" type="text/css"="text/css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Italiana&family=Oxygen:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
     <script type="text/javascript" src="/scripts/app.js"></script>
   </head>
-
-  <body>
+  <body style="margin-top: 130px; background-color: #f5f5f5; background-image: url('https://www.transparenttextures.com/patterns/xv.png');">
     <nav>
       <%- include('partials/_header') %>
     </nav>
-    <section>
-      <div class="home-pic">
-        <h1 class="headline">BENVENUTO E MANGIA!</h1>
+    <section class="response-container">
+      <div>
+        <p>We are still awaiting a response from our kitchen! You will recieve an update with your order shortly!</p>
+        <a href ="/home"><button class="btn btn-dark" id="home-button">Back to home</button></a>
       </div>
     </section>
-    <h1>FOOD APP</h1>
-    <h3>Order is not yet ready</h3>
-
-    <a href ="/sms/smsReceive">Check if your order is ready</a>
-
   </body>
 </html>

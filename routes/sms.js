@@ -11,16 +11,23 @@ const nexmo = new Nexmo({
 });
 
 let templateVars;
+let textSent = false;
+let orderReceived = false;
 
+// When the restaurant responds, this page is loaded
+// with the restaurant response. It then sends a txt to the client as well.
 router.get("/smsReceive", (req, res) => {
   if (!templateVars) {
     res.render("orderNotReady")
   } else {
-    const from = '14372661743';
-    const to = '15872204300';
-    const text = `Restaurant Response: ${templateVars.text}. This response was sent at ${templateVars.timeStamp}`;
-    // Nexmo Sends the sms
-    nexmo.message.sendSms(from, to, text);
+      if (textSent === false) {
+      textSent = true;
+      const from = '14372661743';
+      const to = '15872204300';
+      const text = `Hello from Mamma Mia's! We hope you're hungry: ${templateVars.text}. Sent at ${templateVars.timeStamp}`;
+      // Nexmo Sends the sms
+      nexmo.message.sendSms(from, to, text);
+    }
     res.render("smsReceive", templateVars);
   }
 });
@@ -32,7 +39,8 @@ router.post("/smsReceive", (req, res) => {
   const UTCDateTime = params['message-timestamp'];
   // Convert to local time
   const timeStamp = utcTimeChange(UTCDateTime, "Europe/London", "America/Vancouver");
-  templateVars = { text, timeStamp };
+  orderReceived = true;
+  templateVars = { text, timeStamp, orderReceived };
   res.render("smsReceive", templateVars);
   res.status(200).send()
 });
