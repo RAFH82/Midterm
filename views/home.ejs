@@ -6,10 +6,10 @@
     <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="/styles/home.css" types="text/css">
-
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Oxygen:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="nav.css" type="text/css" />
-
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
     <script type="text/javascript" src="/scripts/app.js"></script>
   </head>
@@ -20,16 +20,18 @@
     </nav>
     <section>
       <div class="home-pic">
-        <img src="https://images.unsplash.com/photo-1516685018646-549198525c1b?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80" id="home-pic">
-        <h1 class="headline">BENVENUTO E MANGIA!</h1>
+        <img src="img/mgg-vitchakorn-98Xi5vMGKck-unsplash.jpg" id="home-pic">
+      </div>
+      <div id="welcome-container">
+        <h1 id="restaurant-name">Mamma Mia's</h1>
+        <h1 id="welcome">BENVENUTO E MANGIA!</h1>
+        <h3 id="username">Hello <%= username %>!</h3>
+        <form METHOD="POST" action="/home">
+          <button class="order-butt">
+            Create Order
+          </button>
+        </form>
       </div>
     </section>
-    <h1>FOOD APP</h1>
-    <h3>WELCOME <%= username %></h3>
-   <form METHOD="POST" action="/home">
-    <button id="order-butt">
-     Create Order
-    </button>
-  </form>
   </body>
 </html>

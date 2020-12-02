@@ -1,3 +1,10 @@
-.nav-link {
-  float: right;
-}
+/* nav {
+  display: flex;
+  justify-content: space-between;
+} */
+/*
+.navbar-nav {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+} */
