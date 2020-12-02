@@ -6,3 +6,7 @@
   margin-bottom: 0;
   font-family: 'Italiana', serif;
 }
+
+#logo {
+  filter: invert(1);
+}
