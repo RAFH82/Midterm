@@ -1,10 +1,12 @@
-/* nav {
-  display: flex;
-  justify-content: space-between;
-} */
-/*
-.navbar-nav {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row;
-} */
+#restaurant-name {
+  position: relative;
+  left: 90px;
+  font-size: 50px;
+  color: white;
+  margin-bottom: 0;
+  font-family: 'Italiana', serif;
+}
+
+#logo {
+  filter: invert(1);
+}
