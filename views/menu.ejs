@@ -42,7 +42,7 @@
         </section>
         <section class="price">
           <div class="price-quantity">
-            <h5 class="foodBox-price" ><%=item.price %></h5>
+            <h4 class="foodBox-price" >$<%=item.price %></h4>
             <div>
               <input id="price" name="price" type="hidden" value="<%=item.price %>">
               <label for="quantity">Quantity</label>
@@ -60,7 +60,7 @@
   </div>
   <div class="submit-btn">
   <form Method="POST" action="/orders">
-    <button class="btn btn-dark"> Submit Order</button>
+    <button class="btn btn-dark btn-lg"> Submit Order</button>
   </div>
   </div>
   </form>
