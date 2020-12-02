@@ -30,7 +30,13 @@ section {
   z-index: 1;
 }
 
-#username {
+#welcome-container {
+  position: absolute;
+  top: 20%;
+  text-align: center;
+}
+
+/* #username {
   position: absolute;
   top: 40%;
   left: 16%;
@@ -60,13 +66,13 @@ section {
   transform: translate(-20%, -100%);
   z-index: 1;
   font-family: 'Oxygen', sans-serif;
-}
+} */
 
 /* Create Order button */
 #order-butt {
-  position:absolute;
+  /* position:absolute;
   top: 70%;
-  left: 10%;
+  left: 10%; */
   transform: translate(-30%);
   border-radius: 2px;
   padding: 12px 28px;

@@ -1,4 +1,10 @@
-#navbar-links {
+/* nav {
   display: flex;
-  justify-content: flex-end;
-}
+  justify-content: space-between;
+} */
+/*
+.navbar-nav {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+} */

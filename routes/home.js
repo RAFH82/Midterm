@@ -24,6 +24,7 @@ module.exports = (db) => {
   });
   router.get("/login/:id", (req, res) => {
     req.session.user_id = req.params.id;
+    console.log(req.session.user_id)
     db.query('SELECT * FROM users;')
     .then(data => {
        const users = data.rows[0].name;
