@@ -29,6 +29,17 @@
   height: 100%;
   padding: 10px;
 }
+
+.container {
+  align-items: center;
+}
+
+section .price {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+
 .foodBox-description {
   width: 70%;
   position: relative;
@@ -42,7 +53,11 @@
   box-shadow: 0 0 11px rgba(33,33,33,.2);
 }
 
+.food-form {
+  height: 90%;
+}
+/*
 .foodBox-add-order {
   position: absolute;
   right: 8%;
-}
+} */

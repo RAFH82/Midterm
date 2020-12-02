@@ -23,22 +23,24 @@
         <img src='<%= item.url%>'>
       </section>
       <section class="container">
-      <form METHOD="POST" action="/menu">
-      <section class="foodBox-description">
-        <h3 class="foodBox-title" > <%= item.name %></h3>
-        <input id="itemID" name="itemID" type="hidden" value="<%= item.id%>">
-        <p class="foodBox-text"><%= item.description  %></p>
-      </section>
-      <section class="price">
-        <h5 class="foodBox-price" ><%=item.price %></h5>
-        <input id="price" name="price" type="hidden" value="<%=item.price %>">
-        <label for="quantity">Quantity</label>
-        <input type="number" id="quantity" name="quantity" min="0" max="10" value="0">
-        <button type="submit" class="foodBox-add-order">Add to Order</button>
-      </section>
-      <footer>
+        <form METHOD="POST" action="/menu" class="food-form">
+        <section class="foodBox-description">
+          <h3 class="foodBox-title" > <%= item.name %></h3>
+          <input id="itemID" name="itemID" type="hidden" value="<%= item.id%>">
+          <p class="foodBox-text"><%= item.description  %></p>
+        </section>
+        <section class="price">
+          <h5 class="foodBox-price" ><%=item.price %></h5>
+          <div>
+            <input id="price" name="price" type="hidden" value="<%=item.price %>">
+            <label for="quantity">Quantity</label>
+            <input type="number" id="quantity" name="quantity" min="0" max="10" value="0">
+          </div>
+          <div class="div-button">
+            <button type="submit" class="foodBox-add-order">Add to Order</button>
+          </div>
+        </section>
       </form>
-      </footer>
       </section>
     </article>
     <% } %>
