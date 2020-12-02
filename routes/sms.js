@@ -18,11 +18,12 @@ let orderReceived = false;
 // with the restaurant response. It then sends a txt to the client as well.
 router.get("/smsReceive", (req, res) => {
   if (!templateVars) {
+    // Renders orderconfirmation page if response from restaurant has not been sent yet
     res.render("orderNotReady")
   } else {
       if (textSent === false) {
       textSent = true;
-      const from = '14372661743';
+      const from = '16045952801';
       const to = '15872204300';
       const text = `Hello from Mamma Mia's! We hope you're hungry: ${templateVars.text}. Sent at ${templateVars.timeStamp}`;
       // Nexmo Sends the sms
