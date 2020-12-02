@@ -16,5 +16,5 @@ INSERT INTO items (name, description, price, food_pic_url) VALUES ('Mushroom Pen
 
 INSERT INTO items (name, description, price, food_pic_url) VALUES ('Seafood Linguine', 'Local jumbo tiger prawns fresh from BC waters and assorted seafood smothered in a mildy spicy and creamy tomato sauce', 40, 'https://images.pexels.com/photos/725997/pexels-photo-725997.jpeg?cs=srgb&dl=pexels-dana-tentis-725997.jpg&fm=jpg');
 
-INSERT INTO items (name, description, price, food_pic_url) VALUES ('Gnocchi', 'Handmade gnocchi tossed in a buttery cream sauce with fresh spinach and roasted garlic and fresh grated parmesan', 22, 'https://images.pexels.com/photos/3590401/pexels-photo-3590401.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+INSERT INTO items (name, description, price, food_pic_url) VALUES ('Gnocchi', 'Handmade gnocchi tossed in a buttery cream sauce with fresh spinach and roasted garlic and fresh grated parmesan', 22, 'https://images.unsplash.com/photo-1593003290701-d5e71453a85a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80');
 -- KEEP DESCRIPTION TO 3 LINES!
