@@ -108,10 +108,20 @@ html {
   margin-bottom: 10px;
 }
 
+#home-button {
+  background-color: #284b59;
+}
+
+#home-button:hover {
+  background-color: #3a6e83;
+}
+
 .submit-btn {
   display:flex;
   justify-content: center;
   align-items: center;
+  margin-top: 20px;
+  margin-bottom: 40px;
 }
 
 /* BACK TO TOP BUTTON */
@@ -141,6 +151,3 @@ html {
   background:#203A43;
 }
 
-#submit-btn {
-  margin-top: 20px;
-}
