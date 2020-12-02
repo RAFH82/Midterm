@@ -1,6 +1,18 @@
 html {
   scroll-behavior: smooth;
 }
+
+.intro-text {
+  margin-left: 10px;
+}
+
+.content {
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
 .menu-items {
   display: flex;
   justify-content: space-evenly;
@@ -102,4 +114,8 @@ html {
 }
 #to-top:hover {
   background:#203A43;
+}
+
+#submit-btn {
+  margin-top: 20px;
 }
