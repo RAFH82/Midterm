@@ -1,6 +1,19 @@
 html {
   scroll-behavior: smooth;
 }
+
+.all-content {
+  height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.intro-text {
+  margin: 20px;
+}
+
 .menu-items {
   display: flex;
   justify-content: space-evenly;
@@ -75,6 +88,12 @@ html {
   display: flex;
   justify-content: flex-end;
   margin-bottom: 10px;
+}
+
+.submit-btn {
+  display:flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* BACK TO TOP BUTTON */
