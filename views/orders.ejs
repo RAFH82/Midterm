@@ -5,45 +5,45 @@
 
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
     <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
-
+    <link rel="stylesheet" href="/styles/orders.css" type="text/css" />
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="nav.css" type="text/css" />
 
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
     <script type="text/javascript" src="/scripts/app.js"></script>
-
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
   <body>
     <nav>
       <%- include('partials/_header') %>
     </nav>
-    <section>
+    <section class="orderSummary">
+      <header class='section-heading'>
       <div class="home-pic">
-      <h1 class="headline">BENVENUTO E MANGIA!</h1>
+      <h1 class="headline">FOOD APP!</h1>
+      <h1>YOUR ORDER</h1>
       </div>
-    </section>
-    <h1>FOOD APP</h1>
-    <h3>Orders page</h3>
-    <section>
-      <h1>YOUR ORDER SUMMARY</h1>
-      <% for (let item of summary) { %>
-      <article>
-        <section>
-          <ul>
-            <li><%=item.quantity%>
-              <%=item.name%>
-              <%=item.orderItemTotal%></li>
-          </ul>
-        </section>
-        <section>
+      </header>
 
-        </section>
+      <% for (let item of summary) { %>
+      <article class=list-article>
+
+
+            <p><span class="quantity"><%=item.quantity%></span>
+              <%=item.name%>
+             <span class="price"> $<%=item.orderItemTotal%></span></p>
+
+
+
       </article>
-    </section>
+
       <% } %>
-      <h2>YOUR TOTAL: <%= total %></h2>
+      <footer>
+      <h2>YOUR TOTAL: $<%= total %></h2>
     <a href ="/home">Back to home</a>
     <a href ="/checkout">Checkout</a>
-
+      </footer>
+  </section>
   </body>
 </html>
