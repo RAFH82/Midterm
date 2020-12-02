@@ -1,3 +1,4 @@
-.nav-link {
-  float: right;
+#navbar-links {
+  display: flex;
+  justify-content: flex-end;
 }
