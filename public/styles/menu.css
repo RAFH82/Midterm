@@ -101,6 +101,9 @@ html {
   flex-direction: column;
   justify-content: space-evenly;
 }
+.foodBox-price {
+  color: #2C5364;
+}
 
 .add-order-btn {
   display: flex;
