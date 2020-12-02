@@ -80,9 +80,5 @@ router.get("/", (req, res) => {
       .json({ error: err.message });
   });
 });
-
-
 return router;
-
-
 };
