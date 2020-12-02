@@ -2,8 +2,8 @@
 <html lang="en">
   <head>
     <title>MENU</title>
-    <link rel="stylesheet" href="/styles/menu.css" types="text/css">
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/menu.css" types="text/css"/>
 
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -15,9 +15,9 @@
 
   <body>
   <nav><%- include('partials/_header') %></nav>
-    <h1>MENU PAGE</h1>
+  <h1>MENU PAGE</h1>
+  <div class="menu-items">
    <% for (let item of imageURL) { %>
-
     <article class="foodBox">
       <section class="foodBox-img">
         <img src='<%= item.url%>'>
@@ -39,13 +39,12 @@
       <footer>
       </form>
       </footer>
-    </section>
-  </article>
-
-  <% } %>
+      </section>
+    </article>
+    <% } %>
+  </div>
   <form Method="POST" action="/orders">
     <button> Submit Order</button>
   </form>
-
   </body>
 </html>
