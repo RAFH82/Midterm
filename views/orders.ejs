@@ -5,12 +5,15 @@
 
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
     <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/orders.css" type="text/css" />
+
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="nav.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/orders.css" type="text/css" />
 
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+    <script type="text/javascript" src="/scripts/orderPage.js"></script>
+
     <script type="text/javascript" src="/scripts/app.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
@@ -30,17 +33,18 @@
       <article class=list-article>
 
 
-            <p><span class="quantity"><%=item.quantity%></span>
-              <%=item.name%>
-             <span class="price"> $<%=item.orderItemTotal%></span></p>
-
-
+            <p><span class="quantity"><input type="number" class="qty" min="0" max="10" value="<%=item.quantity%>"></span>
+            <span class="fixed-quantity"><%=item.quantity%></span>  <%=item.name%>
+             <span class="price"> <%=item.orderItemTotal%></span>
+             <span class = "fixedPrice"><%=item.orderItemTotal%></span>
+            </p>
 
       </article>
 
       <% } %>
       <footer>
-      <h2>YOUR TOTAL: $<%= total %></h2>
+        YOUR TOTAL:<h2> <%= total %></h2>
+
     <a href ="/home">Back to home</a>
     <a href ="/checkout">Checkout</a>
       </footer>
