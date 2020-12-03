@@ -124,6 +124,7 @@ module.exports = (db) => {
     db.query("UPDATE ORDERS set order_total = (SELECT SUM(order_items_total) FROM order_items WHERE order_id = 1) where orders.id = 1;")
     .then(()=>{
       res.status(200);
+      res.redirect("orders");
     })
     .catch(err => {
       res
