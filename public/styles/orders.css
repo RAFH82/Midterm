@@ -26,3 +26,6 @@ span.price{
 header.section-heading{
   margin-bottom: 30px;
 }
+.unit-price{
+  display:none;
+}
