@@ -100,6 +100,7 @@ module.exports = (db) => {
         const templateVars = { name };
         res.render("checkout", templateVars);
       });
+
   });
 
   return router;
