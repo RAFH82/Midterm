@@ -5,4 +5,12 @@ function utcTimeChange(timeStamp, fromTz, toTz) {
   return newDate;
 };
 
-module.exports = { utcTimeChange };
+function textOrder(orderArr) {
+  let orderText = '';
+  for (let item of orderArr) {
+    orderText += `${item.itemQuantity} x ${item.itemName} : $${item.totalCostOfItems}\n`;
+  }
+  return orderText;
+}
+
+module.exports = { utcTimeChange, textOrder };
