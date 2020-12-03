@@ -1,10 +1,9 @@
-
 $(document).ready(function() {
 
 
 
   $(".qty").on('change',function(){
-    console.log("this is the ",this.value);
+
     let itemTotalElement = $(this).parent().parent().find("span.price");
 
     let unitPriceElement = $(this).parent().parent().find("span.unit-price");
