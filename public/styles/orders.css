@@ -32,13 +32,9 @@ ul.orderedList {
   text-align: left;
 }
 
-p {
-  margin-bottom:5px;
-}
-
 .list-article {
   text-align: center;
-  margin-bottom: 2em;
+  margin-bottom: 15px;
 }
 span.quantity{
   float: left;
