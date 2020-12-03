@@ -20,8 +20,12 @@
     <section class="response-container">
       <div>
         <p>Thank you! <br>Your order is now confirmed.<br> Please click below, or navigate to the order status page for when your order will be ready for pickup!</p>
-        <p>Order # <%= order_id %></p>
-        <p>for <%= name %> </p>
+        <p>Order # <%= order_id %> for <%= name %></p>
+        <% for (let item of orderArr) { %>
+          <!-- <p><%= item.itemName %> : <%= item.itemQuantity %></p> -->
+          <p>Total for cost for <%= item.itemQuantity %> <%= item.itemName %>s : $<%= item.totalCostOfItems %></p>
+        <% } %>
+        <p>Order total $<%= orderTotal %></p>
         <p>Submitted at <%= timeStamp %></p>
         <a href="/sms/smsReceive"><button class="btn btn-dark" id="status-button">Order status</button></a>
       </div>
