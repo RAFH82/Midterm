@@ -32,7 +32,7 @@ module.exports = (db) => {
       .then(data => {
         // Order details
         let orderArr = [];
-
+        const order = data.rows
         console.log('this is the order object', order);
         for (let item of order) {
           orderArr.push({
@@ -46,6 +46,10 @@ module.exports = (db) => {
         const order_id = order[0].orderid;
         const orderTotal = order[0].totalordercost;
 
+         // Time change logic
+         const time = Date.now();
+         const timeStamp = utcTimeChange(time, "Europe/London", "America/Vancouver");
+
         const templateVars = { orderArr, name, order_id, orderTotal, timeStamp, };
 
         if (textSent === false) {
@@ -53,10 +57,6 @@ module.exports = (db) => {
         // Sending SMS with order details to restaurant
         const from = '16045952801';
         const to = '15872204300';
-
-        // Time change logic
-        const time = Date.now();
-        const timeStamp = utcTimeChange(time, "Europe/London", "America/Vancouver");
 
         // Order details
         const orderDetails = textOrder(orderArr);
