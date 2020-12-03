@@ -104,35 +104,50 @@ module.exports = (db) => {
   });
 
   router.post("/", (req, res) => {
-    const qtyArray = req.body.send;
-    console.log(qtyArray, typeof qtyArray, Array.isArray(qtyArray))
-    const idArray = req.body.id;
-    const price =  req.body.price;
-    console.log(price)
+    let qtyArray = req.body.send;
+    let idArray = req.body.id;
+    let price =  req.body.price;
+     if(typeof price === 'object') {
+       price = req.body.price;
+     } else {
+       price = [req.body.price];
+     }
+console.log("Array values",qtyArray,idArray,price);
     for (let i =0 ; i< price.length ; i++) {
       let totalPrice = 0;
-      totalPrice = parseInt(qtyArray[i]) * parseInt(price[i]);
+      console.log("type of value",typeof qtyArray);
+      if (typeof qtyArray === 'object') {
+        totalPrice = parseInt(qtyArray[i]) * parseInt(price[i]);
 
-      db.query(`UPDATE order_items SET quantity= ${qtyArray[i]}, order_items_total=${totalPrice} where item_id = ${idArray[i]};`)
+      } else {
+        totalPrice = parseInt(qtyArray) * parseInt(price);
+        idArray = [req.body.id];
+        qtyArray = [req.body.send];
+      }
+      console.log("values",totalPrice,idArray,qtyArray);
+
+     db.query(`UPDATE order_items SET quantity=${qtyArray[i]}, order_items_total=${totalPrice} where item_id = ${idArray[i]};`)
+     //db.query(`UPDATE order_items SET quantity=1, order_items_total=1 where item_id = 1;`)
       .then(()=>{
-        res.status(200);
-      })
-      .catch(err => {
-        res
-          .status(500)
-          .json({ error: err.message });
-      });
-    }
-    db.query("UPDATE ORDERS set order_total = (SELECT SUM(order_items_total) FROM order_items WHERE order_id = 1) where orders.id = 1;")
+       //res.status(200);
+       db.query("UPDATE ORDERS set order_total = (SELECT SUM(order_items_total) FROM order_items WHERE order_id = 1) where orders.id = 1;")
     .then(()=>{
-      res.status(200);
+      // res.status(200);
       res.redirect("orders");
     })
     .catch(err => {
       res
         .status(500)
-        .json({ error: err.message });
+        .json({ error: `order TOTAL error ${err.message}` });
     });
+      })
+      .catch(err => {
+        res
+          .status(500)
+          .json({ error: `order items error ${err.message}` });
+      });
+    }
+
   })
 
   return router;
