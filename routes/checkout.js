@@ -105,8 +105,10 @@ module.exports = (db) => {
 
   router.post("/", (req, res) => {
     const qtyArray = req.body.send;
+    console.log(qtyArray, typeof qtyArray, Array.isArray(qtyArray))
     const idArray = req.body.id;
     const price =  req.body.price;
+    console.log(price)
     for (let i =0 ; i< price.length ; i++) {
       let totalPrice = 0;
       totalPrice = parseInt(qtyArray[i]) * parseInt(price[i]);
