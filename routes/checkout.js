@@ -3,7 +3,7 @@ const express = require('express');
 const router  = express.Router();
 const Nexmo = require('nexmo');
 const { utcTimeChange, textOrder } = require('../public/scripts/helpers');
-
+//const sendUpdatedData = require('../public/scripts/orderPage');
 const nexmo = new Nexmo({
   apiKey: process.env.VONAGE_API_KEY,
   apiSecret: process.env.VONAGE_API_SECRET,
@@ -82,6 +82,35 @@ module.exports = (db) => {
   router.get("/", (req, res) => {
     res.render("checkout");
   });
+
+  router.post("/", (req, res) => {
+    const qtyArray = req.body.send;
+    const idArray = req.body.id;
+    const price =  req.body.price;
+    for (let i =0 ; i< price.length ; i++) {
+      let totalPrice = 0;
+      totalPrice = parseInt(qtyArray[i]) * parseInt(price[i]);
+
+      db.query(`UPDATE order_items SET quantity= ${qtyArray[i]}, order_items_total=${totalPrice} where item_id = ${idArray[i]};`)
+      .then(()=>{
+        res.status(200);
+      })
+      .catch(err => {
+        res
+          .status(500)
+          .json({ error: err.message });
+      });
+    }
+    db.query("UPDATE ORDERS set order_total = (SELECT SUM(order_items_total) FROM order_items WHERE order_id = 1) where orders.id = 1;")
+    .then(()=>{
+      res.status(200);
+    })
+    .catch(err => {
+      res
+        .status(500)
+        .json({ error: err.message });
+    });
+  })
 
   return router;
 };
