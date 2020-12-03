@@ -4,7 +4,7 @@ const router  = express.Router();
 module.exports = (db) => {
 router.get("/", (req, res) => {
   db.query(
-    `SELECT items.name, order_items.quantity,orders.order_total,order_items.order_items_total
+    `SELECT items.id, items.name, order_items.quantity,orders.order_total,order_items.order_items_total
     FROM order_items
     JOIN orders ON orders.id = order_items.order_id
     JOIN items ON items.id = order_items.item_id
@@ -14,7 +14,8 @@ router.get("/", (req, res) => {
     const items = data.rows;
 
     for (let item of items) {
-      b.push({name: item.name,
+      b.push({id: item.id,
+              name: item.name,
               quantity: item.quantity,
               orderTotal: item.order_total,
               orderItemTotal: item.order_items_total});
