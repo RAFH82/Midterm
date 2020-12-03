@@ -14,14 +14,14 @@ $(document).ready(function() {
    let itemTotal = qty * unitPriceElement.html();
 
 
-     itemTotalElement.html(Math.floor(itemTotal));
+     itemTotalElement.html(Math.floor(itemTotal*100)/100);
 
      let spanCollection = $('.price');
      let sum = 0;
      spanCollection.each(function() {
        sum +=parseFloat($(this).html());
      })
-     $("footer h2").html(sum);
+     $("footer h2").html(Math.floor(sum*100)/100);
 
 
 
