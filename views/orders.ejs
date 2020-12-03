@@ -30,13 +30,16 @@
       </header>
 
       <% for (let item of summary) { %>
+        <% const unitPrice = Math.floor((item.orderItemTotal / item.quantity)*100)/100; %>
+
       <article class=list-article>
 
 
             <p><span class="quantity"><input type="number" class="qty" min="0" max="10" value="<%=item.quantity%>"></span>
-            <span class="fixed-quantity"><%=item.quantity%></span>  <%=item.name%>
+             <span><%=item.name%></span>
+             <span class="unit-price"><%=unitPrice%></span>
              <span class="price"> <%=item.orderItemTotal%></span>
-             <span class = "fixedPrice"><%=item.orderItemTotal%></span>
+
             </p>
 
       </article>
