@@ -26,26 +26,25 @@
 
         <% for (let item of summary) { %>
           <% const unitPrice = Math.floor((item.orderItemTotal / item.quantity)*100)/100; %>
-
+          <form method="POST" action="/checkout" >
         <article class=list-article>
-
-
-              <p><span class="quantity"><input type="number" class="qty" min="0" max="10" value="<%=item.quantity%>"></span>
+              <p><span class="quantity"><input name="send" type="number" class="qty" min="0" max="10" value="<%=item.quantity%>"></span>
+                <input name="id" type="hidden" value="<%=item.id%>">
+                <input name="price" type="hidden" value="<%=unitPrice%>">
                <span><%=item.name%></span>
                <span class="unit-price"><%=unitPrice%></span>
                <span class="price"> <%=item.orderItemTotal%></span>
-
               </p>
-
         </article>
-
         <% } %>
-        <footer>
+
           <p class="order-text">Order total:</p>
           <h2> <%= total %></h2>
 
-          <a href ="/menu"><button class="btn btn-dark" id="status-button">Back to Menu</button></a>
-          <a href =""><button class="btn btn-dark" id="status-button">Update Order Quantity</button></a>
+          <button type ="submit" class="btn btn-dark" id="status-button">Update Order Quantity</button>
+        </form>
+        <footer>
+        <a href ="/menu"><button class="btn btn-dark" id="status-button">Back to Menu</button></a>
           <a href ="/checkout"><button class="btn btn-dark" id="status-button">Checkout</button></a>
         </footer>
       </section>
