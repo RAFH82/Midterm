@@ -17,7 +17,7 @@ router.post("/",(req, res) => {
     for (let item of data.rows) {
       b.push({...item});
     }
-    console.log("menu", b);
+
     if(b.length === 0) {
     db.query(`INSERT INTO order_items (order_id,item_id, quantity,order_items_total) VALUES (1,${id},${quantity},${total});`)
     .then(data => {
@@ -32,7 +32,7 @@ router.post("/",(req, res) => {
 }
 
 else {
-  console.log("executed---");
+
   db.query(`UPDATE order_items SET quantity =${quantity},order_items_total=${total} WHERE item_id=${id} and order_id = 1;`)
   .then(data=>{
     res.status(200);

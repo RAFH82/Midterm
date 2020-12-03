@@ -20,7 +20,7 @@ router.get("/", (req, res) => {
               orderItemTotal: item.order_items_total});
 
     }
-    console.log('b',b);
+
     const templateVars = {
           summary : b,
           total : b[0].orderTotal
