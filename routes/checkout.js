@@ -2,13 +2,14 @@ require('dotenv').config();
 const express = require('express');
 const router  = express.Router();
 const Nexmo = require('nexmo');
-const { utcTimeChange } = require('../public/scripts/helpers');
+const { utcTimeChange, textOrder } = require('../public/scripts/helpers');
 
 const nexmo = new Nexmo({
   apiKey: process.env.VONAGE_API_KEY,
   apiSecret: process.env.VONAGE_API_SECRET,
 });
 
+// Will not repeatedly send texts upon page refresh if they have been already sent once
 let textSent = false;
 
 module.exports = (db) => {
@@ -31,7 +32,7 @@ module.exports = (db) => {
       .then(data => {
         // Order details
         let orderArr = [];
-        const order = data.rows;
+
         console.log('this is the order object', order);
         for (let item of order) {
           orderArr.push({
@@ -40,29 +41,34 @@ module.exports = (db) => {
             itemName: item.itemname,
           });
         }
-        console.log('This is the array', orderArr);
         // Order fields that will remain the same
         const name = order[0].user;
         const order_id = order[0].orderid;
         const orderTotal = order[0].totalordercost;
 
+        const templateVars = { orderArr, name, order_id, orderTotal, timeStamp, };
+
+        if (textSent === false) {
+
+        // Sending SMS with order details to restaurant
+        const from = '16045952801';
+        const to = '15872204300';
+
         // Time change logic
         const time = Date.now();
         const timeStamp = utcTimeChange(time, "Europe/London", "America/Vancouver");
 
-        const templateVars = { orderArr, name, order_id, orderTotal, timeStamp, };
-        if (textSent === false) {
-          // Sending SMS with order details to restaurant
-        const from = '16045952801';
-        const to = '15872204300';
-        const text = `Order_id: ${order_id}, For: ${name} Time: ${timeStamp}`;
-        // const orderDetails = for (let item of orderArr) {
-        //   text += `${item.itemName} x ${item.itemQuantity}`
-        // }
-        // textSent = true;
+        // Order details
+        const orderDetails = textOrder(orderArr);
+        const text = `Order_id: #${order_id}\nFor: ${name}\n${orderDetails}\n${timeStamp}`;
+
+        // Once text is sent this prevents repeats
+        textSent = true;
+
         // Nexmo Sends the sms
         nexmo.message.sendSms(from, to, text);
         }
+
         // Then loads the confirmation page with the order details
         res.render("confirmation", templateVars);
       })
