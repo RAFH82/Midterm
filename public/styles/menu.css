@@ -111,15 +111,26 @@ html {
   margin-bottom: 10px;
 }
 
-#home-button {
+#add-button {
   background-color: #284b59;
   border-color: white;
   border-radius: 6px;
 }
 
-#home-button:hover {
+#add-button:hover {
   background-color: #3a6e83;
 }
+
+#submit-button {
+  background-color: #284b59;
+  border-color: white;
+  border-radius: 6px;
+}
+
+#submit-button:hover {
+  background-color: #3a6e83;
+}
+
 
 .submit-btn {
   display:flex;
