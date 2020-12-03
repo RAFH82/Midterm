@@ -16,22 +16,16 @@
     <script type="text/javascript" src="/scripts/app.js"></script>
   </head>
 
-  <body>
+  <body style="margin-top: 130px; background-color: #f5f5f5; background-image: url('https://www.transparenttextures.com/patterns/xv.png');">
     <nav>
       <%- include('partials/_header') %>
     </nav>
-
-    <header>
-    </header>
-    <section>
-      <div class="home-pic">
-        <h1 class="headline">BENVENUTO E MANGIA!</h1>
+    <section class="response-container">
+      <div>
+        <p>Please confirm your contact details</p>
+        <a href ="/orders"><button class="btn btn-dark" id="status-button">Back to Order</button></a>
+        <a href ="/checkout/submit"><button class="btn btn-dark" id="status-button">Submit Order</button></a>
       </div>
     </section>
-    <h1>FOOD APP</h1>
-    <h3>Checkout Page</h3>
-
-    <a href ="/checkout/submit">Submit Order</a>
-
   </body>
 </html>
