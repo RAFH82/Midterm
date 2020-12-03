@@ -1,0 +1,29 @@
+.response-container {
+  margin-top: 91px;
+  display: flex;
+  justify-content: center;
+}
+
+.response-container div {
+  width: 50%;
+  padding: 15px;
+  font-size: 30px;
+  font-family: 'Oxygen', serif;
+  font-weight: 400;
+  text-align: center;
+  color: #284B59;
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 10px;
+  box-shadow: 5px 5px 15px 5px #8a8a8a;
+  word-wrap: normal;
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+}
+
+#status-button {
+  background-color: #284b59;
+}
+
+#status-button:hover {
+  background-color: #3a6e83;
+}
