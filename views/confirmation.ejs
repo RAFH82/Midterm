@@ -23,7 +23,7 @@
         <p>Order # <%= order_id %> for <%= name %></p>
         <% for (let item of orderArr) { %>
           <!-- <p><%= item.itemName %> : <%= item.itemQuantity %></p> -->
-          <p>Total for cost for <%= item.itemQuantity %> <%= item.itemName %>s : $<%= item.totalCostOfItems %></p>
+          <p>Total for cost for <%= item.itemQuantity %> <%= item.itemName %> : $<%= item.totalCostOfItems %></p>
         <% } %>
         <p>Order total $<%= orderTotal %></p>
         <p>Submitted at <%= timeStamp %></p>
