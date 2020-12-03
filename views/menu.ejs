@@ -51,7 +51,7 @@
             </div>
           </div>
             <div class="add-order-btn">
-            <button type="submit" class="btn btn-dark" id="add-button">Add to Order</button>
+            <button type="submit" class="btn btn-dark" id="add-button" onclick="init()">Add to Order</button>
           </div>
         </section>
       </form>
@@ -66,5 +66,19 @@
   </div>
   </form>
   </div>
+  <div class="popuptext" id="myPopup">
+    <p>Added to order!</p>
+  </div>
+  <script>
+    function init() {
+      const myPopup = document.getElementById('myPopup');
+      myPopup.style.opacity = 1;
+      myPopup.style.display = 'block';
+      setTimeout(() => {
+        myPopup.style.opacity = 0;
+        myPopup.style.display = "none";
+      },2500);
+    }
+  </script>
   </body>
 </html>
