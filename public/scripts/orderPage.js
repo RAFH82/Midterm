@@ -5,30 +5,23 @@ $(document).ready(function() {
 
   $(".qty").on('change',function(){
     console.log("this is the ",this.value);
-    let spanElement = $(this).parent().parent().find("span.price");
-    let fixedPrice =  $(this).parent().parent().find("span.fixedPrice");
+    let itemTotalElement = $(this).parent().parent().find("span.price");
 
+    let unitPriceElement = $(this).parent().parent().find("span.unit-price");
    let qty = this.value;
 
-   let fixedQuantity = $("fixed-quantity").val();
 
-   let amount;
-
-     amount = fixedPrice.html() * qty;
-     spanElement.html(amount);
-     let displaytotal = $("footer h2");
-
-     let total = displaytotal.html()*1;
-     if (qty > fixedQuantity) {
-      total+= fixedPrice.html()*1;
-     }
-     if (qty < fixedQuantity) {
-      total-= fixedPrice.html()*1;
-     }
+   let itemTotal = qty * unitPriceElement.html();
 
 
+     itemTotalElement.html(Math.floor(itemTotal));
 
-     displaytotal.html(total);
+     let spanCollection = $('.price');
+     let sum = 0;
+     spanCollection.each(function() {
+       sum +=parseFloat($(this).html());
+     })
+     $("footer h2").html(sum);
 
 
 
