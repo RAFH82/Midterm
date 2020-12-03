@@ -86,11 +86,3 @@ module.exports = (db) => {
   return router;
 };
 
-
-
-// router.get("/submit", (req, res) => {
-
-
-// })
-
-// module.exports = router;
