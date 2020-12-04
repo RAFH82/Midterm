@@ -5,6 +5,12 @@ The user can create an order, edit the amounts of that order, or delete them fro
 restaurant, which will get an SMS message to their phone with the order details. The user will then await a response from the 
 restaurant, which when sent via SMS, will simutaneously update the webpage with details of when the order will be ready for pickup and send an SMS message containing that information to the client.
 
+## App Setup
+
+This app will not work as-is. It is currenty using a trial of an SMS api (vonage) and uses ngrok to allow for the api to reach a webhook url. The code will need to be edited to work with another account and env variables created etc. It can easily be used as a template, however.
+
+In a nutshell, ngrok is launched, and the url that ngrok gives you will be given to the api to use as a webhook url. Any approved and verified phone numbers that would like to send / recieve SMS will need to be added to your account. Once these numbers are added and are added into the code, it will work for you. Numbers are added inside the sms.js and checkout.js route files.
+
 ## Dependencies
 
 - Body-parser: ^1.19.0
