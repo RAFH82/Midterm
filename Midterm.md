@@ -1,4 +1,4 @@
-Food Order / Pickup App
+## Food Order / Pickup App
 
 This is the midterm project that Samantha Fok, Sahil Sharma, & Ryan Hrechka created from the Oct 26th, 2020 Cohort.
 The user can create an order, edit the amounts of that order, or delete them from the order, and submit their order to the 
@@ -22,7 +22,3 @@ restaurant, which when sent via SMS, will simutaneously update the webpage with 
 - PG-native: ^3.0.0
 
 # Screenshots
-
-![Tweeter: Desktop Mode](https://github.com/RAFH82/tweeter/blob/master/docs/Tweeter-Desktop%20Mode.png)
-![Tweeter: Tablet Mode](https://github.com/RAFH82/tweeter/blob/master/docs/Tweeter-Tablet%20Mode.png)
-
