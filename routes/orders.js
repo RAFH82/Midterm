@@ -10,6 +10,9 @@ module.exports = (db) => {
       JOIN items ON items.id = order_items.item_id
       WHERE orders.id = 1;`)
     .then(data => {
+      if (data.rows.length === 0) {
+        return res.render('empty');
+      }
       let b = [];
       const items = data.rows;
 
