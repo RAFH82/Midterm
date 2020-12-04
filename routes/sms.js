@@ -24,7 +24,7 @@ router.get("/smsReceive", (req, res) => {
       if (textSent === false) {
       textSent = true;
       const from = '16045952801';
-      const to = '15872204300';
+      const to = '16472861763';
       const text = `Hello from Mamma Mia's! We hope you're hungry: ${templateVars.text}. Sent at ${templateVars.timeStamp}`;
       // Nexmo Sends the sms
       nexmo.message.sendSms(from, to, text);
