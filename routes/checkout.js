@@ -15,20 +15,22 @@ let textSent = false;
 module.exports = (db) => {
 
   router.get("/submit", (req, res) => {
-    db.query(`
-    SELECT users.name AS user,
-    orders.id AS orderId,
-    SUM(order_items.quantity) AS itemQuantity,
-    order_items_total AS totalOrderItems,
-    items.name AS itemName,
-    orders.order_total AS totalOrderCost
-    FROM order_items
-    JOIN orders ON orders.id = order_id
-    JOIN items ON items.id = item_id
-    JOIN users ON users.id = user_id
-    WHERE orders.id = 1
-    GROUP BY orders.id, users.name, order_items_total, items.name;
-    ;`)
+    db.query(
+      `
+      SELECT users.name AS user,
+      orders.id AS orderId,
+      SUM(order_items.quantity) AS itemQuantity,
+      order_items_total AS totalOrderItems,
+      items.name AS itemName,
+      orders.order_total AS totalOrderCost
+      FROM order_items
+      JOIN orders ON orders.id = order_id
+      JOIN items ON items.id = item_id
+      JOIN users ON users.id = user_id
+      WHERE orders.id = 1
+      GROUP BY orders.id, users.name, order_items_total, items.name;
+      ;`
+      )
       .then(data => {
         // Order details
         let orderArr = [];
@@ -79,20 +81,22 @@ module.exports = (db) => {
   });
 
   router.get("/", (req, res) => {
-    db.query(`
-    SELECT users.name AS user,
-    orders.id AS orderId,
-    SUM(order_items.quantity) AS itemQuantity,
-    order_items_total AS totalOrderItems,
-    items.name AS itemName,
-    orders.order_total AS totalOrderCost
-    FROM order_items
-    JOIN orders ON orders.id = order_id
-    JOIN items ON items.id = item_id
-    JOIN users ON users.id = user_id
-    WHERE orders.id = 1
-    GROUP BY orders.id, users.name, order_items_total, items.name;
-    ;`)
+    db.query(
+      `
+      SELECT users.name AS user,
+      orders.id AS orderId,
+      SUM(order_items.quantity) AS itemQuantity,
+      order_items_total AS totalOrderItems,
+      items.name AS itemName,
+      orders.order_total AS totalOrderCost
+      FROM order_items
+      JOIN orders ON orders.id = order_id
+      JOIN items ON items.id = item_id
+      JOIN users ON users.id = user_id
+      WHERE orders.id = 1
+      GROUP BY orders.id, users.name, order_items_total, items.name;
+      ;`
+      )
       .then(data => {
         // Order details
         const order = data.rows
@@ -100,7 +104,6 @@ module.exports = (db) => {
         const templateVars = { name };
         res.render("checkout", templateVars);
       });
-
   });
 
   router.post("/", (req, res) => {
