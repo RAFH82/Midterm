@@ -48,6 +48,10 @@ header.section-heading{
   margin-bottom: 20px;
 }
 
+h2 {
+  display: inline-block;
+}
+
 #status-button {
   background-color: #284b59;
   margin: 10px;
@@ -55,6 +59,10 @@ header.section-heading{
 
 #status-button:hover {
   background-color: #3a6e83;
+}
+
+#price-amount {
+  float: right;
 }
 
 .order-text {
