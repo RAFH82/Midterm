@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="/styles/nav.css" types="text/css">
+    <link rel="stylesheet" href="/styles/loader.css" types="text/css">
     <link rel="stylesheet" href="/styles/smsReceive.css" type="text/css"="text/css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Italiana&family=Oxygen:wght@400;700&display=swap" rel="stylesheet">
@@ -18,11 +19,23 @@
     <nav>
       <%- include('partials/_header') %>
     </nav>
-    <section class="response-container">
+
+      <section class="response-container">
+        <div>
+          <p>We are still awaiting a response from our kitchen! You will recieve an update with your order shortly!</p>
+          <a href ="/home"><button class="btn btn-dark" id="home-button">Back to home</button></a>
+        </div>
+      </section>
+
+    <div class="loader">
+      <h3 class="confirm-text">Mamma Mia's is confirming your order</h3>
       <div>
-        <p>We are still awaiting a response from our kitchen! You will recieve an update with your order shortly!</p>
-        <a href ="/home"><button class="btn btn-dark" id="home-button">Back to home</button></a>
+        <div class="images">
+          <img class="bread" src="/img/bread.png">
+        </div>
+        <div class="shadow"></div>
       </div>
-    </section>
+    </div>
+
   </body>
 </html>
