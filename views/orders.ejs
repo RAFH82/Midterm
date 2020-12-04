@@ -33,14 +33,15 @@
                 <input name="price" type="hidden" value="<%=unitPrice%>">
                <span><%=item.name%></span>
                <span class="unit-price"><%=unitPrice%></span>
-               <span class="price"> <%=item.orderItemTotal%></span>
+               <span class="price"><%=item.orderItemTotal%></span>
+               <span id="price-amount">$</span>
               </p>
         </article>
         <% } %>
 
           <p class="order-text">Order total:</p>
-          <h2> <%= total %></h2>
-
+          <span>$</span><h2><%= total %></h2>
+          <br>
           <button type ="submit" class="btn btn-dark" id="status-button">Update Order Quantity</button>
         </form>
         <footer>

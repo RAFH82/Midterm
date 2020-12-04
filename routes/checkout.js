@@ -55,7 +55,7 @@ module.exports = (db) => {
 
         // Sending SMS with order details to restaurant
         const from = '16045952801';
-        const to = '15872204300';
+        const to = '17788629056';
 
         // Order details
         const orderDetails = textOrder(orderArr);
