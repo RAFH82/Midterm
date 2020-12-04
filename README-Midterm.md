@@ -22,3 +22,9 @@ restaurant, which when sent via SMS, will simutaneously update the webpage with 
 - PG-native: ^3.0.0
 
 # Screenshots
+
+![Home-page](https://github.com/RAFH82/Midterm/blob/master/img/home.png)
+![Menu-page](https://github.com/RAFH82/Midterm/blob/master/img/menu.png)
+![Order-page](https://github.com/RAFH82/Midterm/blob/master/img/order.png)
+![Confirmation-page](https://github.com/RAFH82/Midterm/blob/master/img/confirmation.png)
+![Order-status-page](https://github.com/RAFH82/Midterm/blob/master/img/order_status.png)
